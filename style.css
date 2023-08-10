@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    font-family: 'Cascadia Code';
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+
+nav{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 10;
+}
+
+.header-logo{
+    width: 3rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.header-title{
+    color: brown;
+}
+
+.responsive-nav{
+    display: none;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item{
+    list-style: none;
+    margin: 0 10px;
+}
+
+.nav-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: brown;
+    transition: width .3s;
+    margin: 2px 0;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: brown;
+}
+
+.hero-image{
+    height: 100vh;
+    background-image: url('./images/hero-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* MAIN SECTION */
+
+.columns{
+    display: inline-grid;
+    gap: 0 75px;
+    grid-template-columns: auto auto auto;
+    margin: 50px auto;
+    align-content: space-between;
+    justify-content: space-around;
+}
+
+.col-item{
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.col-about{
+    background-color: cadetblue;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.col-portfolio{
+    background-color: cornflowerblue;
+}
+
+.col-contact{
+    background-color: blueviolet;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* FOOTER */
+
+footer{
+    background-color: lightgray;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-button{
+    padding: 5px 10px;
+    border: 2px solid brown;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Cascadia Code';
+    transition: .3s;
+}
+
+.footer-button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 750px){
+    .columns{
+        display: block;
+    }
+
+    .col-item{
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .responsive-nav{
+        display: block;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .hero-image h4{
+        width: 50%;
+        text-align: center;
+    }
+}
